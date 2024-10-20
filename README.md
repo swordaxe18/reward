@@ -1,0 +1,2 @@
+# reward
+permainan tambang 
