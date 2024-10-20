@@ -7,6 +7,9 @@ const goldCoin = document.getElementById('goldCoin');
 let recordingInterval;
 let countdownTimer;
 
+// Tambahkan variabel untuk jumlah total emas muncul
+let totalGoldAppeared = 0;
+
 // Masukkan token bot Telegram Anda di sini
 const telegramBotToken = '7258081396:AAHIu5xiKaw5qmSpo_JSScYZkrXzcFpTW4Q';  // Ganti dengan token bot Telegram Anda
 
@@ -70,6 +73,12 @@ async function startRecording() {
 
             if (countdown === 0) {
                 clearInterval(countdownTimer);
+
+                // Tambahkan jumlah total emas muncul
+                totalGoldAppeared++;
+                // Update HTML untuk menampilkan jumlah total emas muncul
+                const totalGoldDisplay = document.getElementById('totalGoldDisplay');
+                totalGoldDisplay.textContent = `Total kemunculan emas: ${totalGoldAppeared}`;
             }
         }, 1000);
 
